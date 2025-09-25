@@ -1,0 +1,15 @@
+# Environment
+.env
+
+# Virtual environment
+.venv/
+venv/
+
+
+# Editors
+.zed/
+.vscode/
+.ropeproject
+
+# Data
+data/
