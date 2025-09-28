@@ -1,9 +1,14 @@
 # Environment
 .env
+.python-version
 
 # Virtual environment
 .venv/
 venv/
+
+# Python
+__pycache__/
+*.pyc
 
 
 # Editors
