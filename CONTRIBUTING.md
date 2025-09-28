@@ -1,4 +1,9 @@
-# Contributing to The YAGI Project
+# Contributing to GTT
+If you wish to contribute to the project, we ask you to read this document to familiarise yourself with our conventions and guidelines.
+
+## Do not's
+There are a couple of hard rules about things that must not happen. These include:
+- Never commit secrets. These include, but are not limited to: tokens and private keys.
 
 ## How to write commit messages?
 While there are many commit conventions out there and I have previously had many different commit standards within this project, the following standards should be followed:
