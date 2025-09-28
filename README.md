@@ -3,14 +3,32 @@
 
 Currently, only GitLab is supported.
 
-## Usage
-Prerequisites:
-- Python version 3.11
-- python-venv
+## Background
+At the time of creating *GTT*, GitLab v.18.5 does not support tracking tasks not associated with an issue or epic, and visualising time log. Teams who depend on GitLab's time tracker to record time performance and deviations between estimated and actual time usage, must refer to external tools.
 
-Other Python versions may work, but is not tested. GTT's code may be introduced to breaking changes for unsupported Python versions.
+*GTT* was written as an internal tool to fulfill the following requirements:
+- Easy to use for non-programmers and as a command-line tool.
+- Visualise time on different basis, e.g.
+    - per-author
+    - per-issue or epic
+- Visualise time in different formats, e.g.
+    - table
+    - bars
+    - pie chart
 
-`python-venv` is used only for the virtual environment. Most other solutions, like `virtual-env` and `anaconda`, should work.
+The most important goal is to be a tool to help contributors measure their own performance and time estimations.
+
+It is fully open-source licensed under [Apache 2.0](./LICENSE).
+
+## Prerequisites
+Prerequisites
+- `python` version 3.11
+    - Other Python versions may work, but is not tested. GTT's code may be introduced to breaking changes for unsupported Python versions.
+- `python-venv`
+    - `python-venv` is used only for the virtual environment. Most other solutions, like `virtual-env` and `anaconda`, should work.
+
+## Getting Started
+The project currently do not have any releases. Therefore, it is recommended to use Git to clone the project, or to download it as a ZIP archive on GitHub.
 
 1. Clone the project and install dependencies.
     ```
