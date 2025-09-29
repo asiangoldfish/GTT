@@ -3,6 +3,8 @@
 
 Currently, only GitLab is supported.
 
+
+
 ## Background
 At the time of creating *GTT*, GitLab v.18.5 does not support tracking tasks not associated with an issue or epic, and visualising time log. Teams who depend on GitLab's time tracker to record time performance and deviations between estimated and actual time usage, must refer to external tools.
 
@@ -46,6 +48,22 @@ The `.env` contains both secrets and various environment variables. This should 
 - `TOKEN`: The private token to access your account (i.e. GitLab). See [Tokens](#tokens) for more info.
 - `PROJECT_ID`: A unique identifier for the project or repositories. This may be hard to find. You can perhaps find it in the web page's source code, as described in this [Stack Overflow post](https://stackoverflow.com/a/45500237).
 - `VENDOR_URL`: The provider's URL, like https://github.com or https://gitlab.com.
+
+The project uses `argparse` and supports subcommands. Example:
+```sh
+# Default help page
+gtt.py --help
+
+# Help page for time-deviation command
+gtt.py time-deviation --help
+```
+
+## Examples
+*Compute deviation between esimated time usage and time spent in sprint n*
+
+```
+gtt.py time-deviation --sprint=n --user='Your name'
+```
 
 ## Tokens
 You will normally not be able to consume protected APIs without some kind of verification. The most common verification method is to generate a token with the vendor's solution and include it in the request header. For GitLab specifically, one of the following scopes must be enabled:
