@@ -95,33 +95,10 @@ class Application:
 
         for issue in issues:
             stats = issue["time_stats"]
-
-            ## Show time in hour or minute if applicable
-            # Estimated time
-            time_estimate_min = stats['time_estimate'] // 60 % 60
-            time_estimate_hour = stats['time_estimate'] // 3600
-            time_estimate_show = ''
-
-            if time_estimate_hour > 0:
-                time_estimate_show = f'{time_estimate_hour}h'
-            if time_estimate_min > 0 :
-                time_estimate_show += f'{time_estimate_min}m'
             
-            # Time spent            
-            time_spent_min = stats['total_time_spent'] // 60 % 60
-            time_spent_hour = time_estimate_min // 60
-            time_spent_show = ''
-
-            if time_spent_hour > 0:
-                time_spent_show = f'{time_spent_hour}h'
-            if time_spent_min >0 :
-                time_spent_show += f'{time_spent_min}m'
-
             data.append({
                 "issue_id": issue["iid"],
                 "title": issue["title"],
-                "estimate": time_estimate_show,
-                "spent": time_spent_show,
                 "estimate_human": stats["human_time_estimate"],
                 "spent_human": stats["human_total_time_spent"],
                 "user": issue["assignee"]["name"] if issue["assignee"] else None
