@@ -17,6 +17,7 @@ parser.add_argument(
 parser.add_argument('--version', action='store_true',
                     help='print the current version')
 parser.add_argument('--debug', action='store_true', help='enable debug mode')
+parser.add_argument('--sync', action='store_true', help='synchronise with remote')
 
 args = parser.parse_args()
 
@@ -32,11 +33,11 @@ if args.version:
 app = Application()
 app.debug = args.debug
 
-if not app.set_format(args.format):
-    print(f"'{args.format}' is not a valid format. Supported formats:")
-    for format in app.allowed_formats:
-        print(f'\t{format}')
-    exit(1)
-
 if not app.init():
     exit(1)
+
+if args.sync and app.sync():
+    print("Successfully synchronised with remote")
+
+if args.format:
+    app.show(args.format)
